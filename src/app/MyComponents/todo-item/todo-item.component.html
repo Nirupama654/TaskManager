@@ -1,0 +1,17 @@
+<div class="container card my-3 p-3 d-grid gap-2 col-6 mx-auto" [ngClass]="[todo.active ? 'alert alert-warning' : 'alert alert-success']">
+    <h3 >{{todo.title}}</h3>
+    <b>Time : {{todo.time}}</b>
+    <p >{{todo.desc}}</p>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="item{{i}}" (click)="onCheckboxClick(todo)"
+        [checked] = "!todo.active">
+        <label class="form-check-label" for="item{{i}}">
+        Done
+        </label>
+      </div>
+      <div class="d-grid gap-2 d-md-block my-2">
+        <button class="btn btn-danger btn-sm" type="button" (click)="onClick(todo)">Delete</button>
+      </div>
+</div>
+
+
